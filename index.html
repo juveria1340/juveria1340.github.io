@@ -1,48 +1,71 @@
-
+# Create a styled and clean HTML portfolio page for GitHub Pages
+styled_html_content = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juveria Iram | Python Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            background: #f7f7f7;
+            background-color: #f0f2f5;
             color: #333;
         }
         header {
-            background: #333;
-            color: #fff;
-            padding: 20px 0;
+            background-color: #24292e;
+            color: white;
+            padding: 40px 0;
             text-align: center;
         }
-        .container {
-            padding: 30px;
-            max-width: 900px;
-            margin: auto;
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
         }
-        h1, h2 {
-            color: #444;
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
         }
         .project {
-            background: #fff;
-            border-radius: 10px;
+            background-color: white;
             padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
             margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .project h3 {
+            margin-top: 0;
         }
         .project a {
-            color: #007BFF;
+            color: #1d4ed8;
             text-decoration: none;
+            font-weight: 500;
         }
         footer {
             text-align: center;
-            padding: 20px;
-            background: #eee;
-            margin-top: 30px;
+            padding: 20px 0;
+            background-color: #e5e7eb;
+            margin-top: 40px;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -54,7 +77,7 @@
     <div class="container">
         <section>
             <h2>About Me</h2>
-            <p>I am a Python developer and data engineer with a strong interest in AI, MLOps, and automation. I enjoy building real-time, intelligent systems and am currently working on AI-driven education and workflow tools.</p>
+            <p>Hello! I'm a Python developer and data engineer with expertise in automation, AI/ML, and MLOps. I'm passionate about building intelligent systems, fine-tuning transformers, and making data-driven solutions that work in real time.</p>
         </section>
         <section>
             <h2>Projects</h2>
@@ -76,12 +99,11 @@
                 <p>NLP-based assistant that suggests solutions when GitHub Actions fail.</p>
                 <p><a href="https://github.com/your-repo/workflow-debugger">GitHub Repo</a> | <a href="https://your-debugger-app.streamlit.app">Live Demo</a></p>
             </div>
-
         </section>
         <section>
             <h2>Contact</h2>
             <p>Email: juveriairam1340@gmail.com</p>
-            <p>GitHub: <a href="https://github.com/juveriairam">https://github.com/juveriairam</a></p>
+            <p>GitHub: <a href="https://github.com/juveria1340">https://github.com/juveria1340</a></p>
         </section>
     </div>
     <footer>
@@ -89,3 +111,12 @@
     </footer>
 </body>
 </html>
+"""
+
+# Save the styled HTML file
+styled_output_dir = Path("/mnt/data/styled-portfolio")
+styled_output_dir.mkdir(parents=True, exist_ok=True)
+styled_portfolio_file = styled_output_dir / "index.html"
+styled_portfolio_file.write_text(styled_html_content)
+
+styled_portfolio_file.name
